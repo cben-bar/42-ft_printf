@@ -17,23 +17,15 @@ int	ft_printf(const char *str, void *printable)
 
 	i = 0;
 	printed = 0;
-	while (str[i] < 37 && printable > 37)
+	while (str[i])
 	{
+		while (str[i] != '%')
+		{
+			ft_putchar(str[i]);
+			i++;
+		}
 		if (str[i] == '%')
 		{
-			if (str[i + 1] == 'c')
-			{
-				ft_putchar(str[i + 1]
-				i++;
-				printed++;
-			}
-			if (str[i + 1] == 's')
-			{
-				
-				
-		ft_putchar(str[i]);
-		i++;
-		printed++;
-	}
-	return (printed);
-}
+			ft_check_flag(str[i + 1]);
+			i++;
+		}
