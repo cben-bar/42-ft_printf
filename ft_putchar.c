@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, size_t printed)
 {
 	write(1, &c, 1);
+	printed++;
 }
