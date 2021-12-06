@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:13:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 21:20:24 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/06 21:24:35 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_printstr(char *str)
 int	i;
 
 	i = 0;
-	if (! str)
+	if (!str)
 	{
 		ft_printstr("(null)");
 		return (6);
