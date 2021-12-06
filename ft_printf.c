@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 02:38:57 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 04:14:35 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/06 21:15:36 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,49 +26,41 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_check_format(va_list args, char c, int printed)
+int	ft_check_format(va_list args, char c)
 {
 			if (c == 'c')
-				return (ft_putc(va_arg(args, char, printed));
+				return (ft_printc(va_arg(args, char));
 			else if (c == 's')
-				return (printed += ft_puts(va_arg(args, char *, printed));
+				return (ft_printstr(va_arg(args, char *));
 			else if (c == 'p')
-				return (ft_putptr_hexa(va_arg(args, unsigned long, printed));
+				return (ft_printadd(va_arg(args, unsigned long));
 			else if (c == 'd' || c == 'i')
-				return (ft_putnbr(va_arg(args, int, printed));
+				return (ft_printnbr(va_arg(args, int));
 			else if (c == 'u')
-				return (ft_putunsigned_dec(va_arg(args, unsigned int, printed));
-			else if (c == 'x')
-				return (ft_puthexa_low(va_arg(args, unsigned int, printed));
-			else if (c == 'X')
-				return (ft_puthexa_upp(va_arg(args, unsigned int, printed));
+				return (ft_printunsnbr(va_arg(args, unsigned int));
+			else if (c == 'X' || c == 'x')
+				return (ft_printhexnbr(va_arg(args, unsigned int), c);
 			else if (c == '%')
-				return (printed += ft_putc('%', printed));
+				return (ft_printc('%'));
 		}
 	return (0);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	static int	printed;
 	va_list		args;
-	int			i;
+	size_t		i;
+	size_t		printed;
 
 	printed = 0;
 	i = 0;
 	va_start(args, str);
 	while (str[i])
 	{
-		while (str[i] != '%')
-		{
+		if (str[i] != '%')
 			printed += write(1, &str[i], 1);
-			i++;
-		}
-		if (str[i] == '%')
-		{
+		if (str[i] == '%' && str[i + 1])
 			printed += ft_check_format(args, str[i + 1], printed);
-			i++;
-		}	
 		i++;
 	}
 	va_end(args);
