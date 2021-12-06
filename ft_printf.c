@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 02:38:57 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 02:39:47 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/06 02:48:42 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,6 @@ size_t	ft_strlen(char *str)
 		i++;
 	}
 	return (i);
-}
-
-int	ft_putc(char c, int printed)
-{
-	printed = write(1, &c, 1);
-	return (printed);
-}
-
-int ft_puts(char *str, int printed)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putc(str[i], printed);
-		i++;
-	}
-	return (printed = ft_strlen(str));
 }
 
 int	ft_check_format(char c)

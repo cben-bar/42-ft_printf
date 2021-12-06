@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 03:30:28 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/02 05:10:16 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2021/12/06 02:46:32 by cben-bar          #+#    #+#             */
+/*   Updated: 2021/12/06 02:47:24 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c, size_t printed)
+int	ft_putc(char c, int printed)
 {
-	write(1, &c, 1);
-	printed++;
+	printed = write(1, &c, 1);
+	return (printed);
 }

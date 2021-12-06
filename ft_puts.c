@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 03:33:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/02 03:35:58 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2021/12/06 02:43:12 by cben-bar          #+#    #+#             */
+/*   Updated: 2021/12/06 02:45:19 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *s)
+#include "libft.h"
+
+int	ft_puts(char *str, int printed)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i != '\0')
+	while (str[i])
 	{
-		ft_putchar(s[i]);
+		ft_putc(str[i], printed);
 		i++;
 	}
+	return (printed = ft_strlen(str));
 }
