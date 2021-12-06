@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 02:38:57 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 02:48:42 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/06 04:00:06 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,26 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_check_format(char c)
+int	ft_check_format(va_list args, char c)
 {
-	char *s;
-	int	i;
-
-	s = "cspdiuxX%";
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (i);
-		i++;
-	}
-	return (i);
+			if (c == 'c')
+				return (ft_putc(va_arg(args, char));
+			else if (c == 's')
+				return (printed += ft_puts(va_arg(args, char *));
+			else if (c == 'p')
+				return (ft_putptr_hexa(va_arg(args, unsigned long));
+			else if (c == 'd' || c == 'i')
+				return (ft_putnbr(va_arg(args, int));
+			else if (c == 'u')
+				return (ft_putunsigned_dec(va_arg(args, unsigned int));
+			else if (c == 'x')
+				return (ft_puthexa_low(va_arg(args, unsigned int));
+			else if (c == 'X')
+				return (ft_puthexa_upp(va_arg(args, unsigned int));
+			else if (c == '%')
+				return (printed += ft_putc('%', printed));
+		}
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
@@ -60,20 +66,8 @@ int	ft_printf(const char *str, ...)
 		}
 		if (str[i] == '%')
 		{
-			if (ft_check_format(str[i+1]) > 8);
-				i++;
-			else if (ft_check_format(str[i+1] == 0)
-				ft_putc(
-			else if (ft_check_format(str[i+1] == 1)
-			else if (ft_check_format(str[i+1] == 2)
-			else if (ft_check_format(str[i+1] == 3)
-			else if (ft_check_format(str[i+1] == 4)
-			else if (ft_check_format(str[i+1] == 5)
-			else if (ft_check_format(str[i+1] == 6)
-			else if (ft_check_format(str[i+1] == 7)
-			else if (ft_check_format(str[i+1] == 8)
-				printed += ft_putc('%', printed);
-		}
+			ft_check_format(args, str[i + 1]);
+		}	
 		i++;
 	}
 	va_end(args);
