@@ -6,9 +6,11 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:31:13 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 22:32:29 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 02:09:12 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/printf.h"
 
 int	ft_check_format(va_list args, char c)
 {
@@ -17,7 +19,7 @@ int	ft_check_format(va_list args, char c)
 			else if (c == 's')
 				return (ft_printstr(va_arg(args, char *));
 			else if (c == 'p')
-				return (ft_printadd(va_arg(args, unsigned long));
+				return (ft_printaddr(va_arg(args, void *), 0);
 			else if (c == 'd' || c == 'i')
 				return (ft_printnbr(va_arg(args, int));
 			else if (c == 'u')

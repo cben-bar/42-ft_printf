@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_printaddr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 21:13:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 01:59:36 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2021/12/07 01:38:05 by cben-bar          #+#    #+#             */
+/*   Updated: 2021/12/07 01:56:09 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
-int	ft_printstr(char *str)
+int	ft_printaddr(void *add, size_t printed)
 {
-	size_t	i;
+	unsigned long	ptraddr;
+	char			*base;
 
-	i = 0;
-	if (!str)
-	{
-		ft_printstr("(null)");
-		return (6);
-	}
-	while (str[i])
-	{
-		ft_printc(str[i]);
-		i++;
-	}
-	return (ft_strlen(str));
+	ptradd = (unsigned long)add;
+	base = "0123456789abcdef";
+	if (ptraddr >= 16)
+		ft_printaddr(ptraddr / 16);
+	printed += ft_printc(base[ptraddr % 16]);
+	return (printed);
 }

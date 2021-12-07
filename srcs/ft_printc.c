@@ -6,14 +6,16 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:14:11 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 21:14:31 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 01:58:56 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_printc(char c)
 {
+	size_t	printed;
+
 	printed = write(1, &c, 1);
 	return (printed);
 }
