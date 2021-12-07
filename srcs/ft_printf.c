@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:31:13 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 02:09:12 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 03:39:26 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ int	ft_printf(const char *str, ...)
 		if (str[i] != '%')
 			printed += write(1, &str[i], 1);
 		if (str[i] == '%' && str[i + 1])
-			printed += ft_check_format(args, str[i + 1], printed);
+		{
+			printed += ft_check_format(args, str[i + 1], printed)
+			i++;
+		}			
 		i++;
 	}
 	va_end(args);
