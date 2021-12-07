@@ -6,9 +6,11 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 03:05:26 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 03:39:51 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 03:41:24 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/printf.h"
 
 int	ft_printnbr(int nb)
 {
