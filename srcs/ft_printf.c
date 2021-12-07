@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:31:13 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 04:18:49 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 22:47:41 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 int	ft_check_format(va_list args, char c)
 {
-			if (c == 'c')
-				return (ft_printc(va_arg(args, char));
-			else if (c == 's')
-				return (ft_printstr(va_arg(args, char *));
-			else if (c == 'p')
-				return (ft_printaddr(va_arg(args, void *), 0);
-			else if (c == 'd' || c == 'i')
-				return (ft_printnbr(va_arg(args, int), 0);
-			else if (c == 'u')
-				return (ft_printunsnbr(va_arg(args, unsigned int), 0);
-			else if (c == 'X' || c == 'x')
-				return (ft_printhexnbr(va_arg(args, unsigned int), c, 0);
-			else if (c == '%')
-				return (ft_printc('%'));
-		}
+	if (c == 'c')
+		return (ft_printc(va_arg(args, char)));
+	else if (c == 's')
+		return (ft_printstr(va_arg(args, char *)));
+	else if (c == 'p')
+		return (ft_printaddr(va_arg(args, void *), 0));
+	else if (c == 'd' || c == 'i')
+		return (ft_printnbr(va_arg(args, int), 0));
+	else if (c == 'u')
+		return (ft_printunsnbr(va_arg(args, unsigned int), 0));
+	else if (c == 'X' || c == 'x')
+		return (ft_printhexnbr(va_arg(args, unsigned int), c, 0));
+	else if (c == '%')
+		return (ft_printc('%'));
 	return (0);
 }
 
@@ -47,7 +46,7 @@ int	ft_printf(const char *str, ...)
 			printed += write(1, &str[i], 1);
 		if (str[i] == '%' && str[i + 1])
 		{
-			printed += ft_check_format(args, str[i + 1], printed)
+			printed += ft_check_format(args, str[i + 1], printed);
 			i++;
 		}			
 		i++;
