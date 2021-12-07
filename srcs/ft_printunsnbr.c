@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnbr.c                                      :+:      :+:    :+:   */
+/*   ft_printunsnbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 03:05:26 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 03:56:51 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2021/12/07 03:49:50 by cben-bar          #+#    #+#             */
+/*   Updated: 2021/12/07 03:58:05 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_printnbr(int nb, size_t printed)
+int	ft_printunsnbr(unsigned int nb, size_t printed)
 {
-	if (nb < 0)
-	{
-		printed += ft_printc('-');
-		nb *= -1;
-		(unsigned long)nb;
-	}
 	if (nb < 10)
 		printed += ft_printc(nb + '0');
-	if (nb >= 10)
+	else
 	{
-		ft_printnbr(nb / 10);
+		ft_printunsnbr(nb / 10);
 		printed += ft_printc(nb % 10 + '0');
 	}
 	return (printed);

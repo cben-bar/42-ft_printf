@@ -6,11 +6,11 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:12:42 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/06 21:13:14 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 03:57:34 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printhexnbr(int nb)
+int	ft_printhexnbr(unsigned int nb)
 {
 	char *base;
 
@@ -20,4 +20,6 @@ int	ft_printhexnbr(int nb)
 		ft_putchar('-');
 		nb *= -1;
 	}
-	if (nb >= ft_strlen
+	if (nb >= ft_strlen(base)
+	{
+	
