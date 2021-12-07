@@ -6,11 +6,11 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 22:31:13 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 03:56:36 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 04:18:49 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_check_format(va_list args, char c)
 {
@@ -25,7 +25,7 @@ int	ft_check_format(va_list args, char c)
 			else if (c == 'u')
 				return (ft_printunsnbr(va_arg(args, unsigned int), 0);
 			else if (c == 'X' || c == 'x')
-				return (ft_printhexnbr(va_arg(args, unsigned int), c);
+				return (ft_printhexnbr(va_arg(args, unsigned int), c, 0);
 			else if (c == '%')
 				return (ft_printc('%'));
 		}

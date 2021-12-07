@@ -6,11 +6,11 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:14:11 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 01:58:56 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/07 04:17:10 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
 int	ft_printc(char c)
 {
