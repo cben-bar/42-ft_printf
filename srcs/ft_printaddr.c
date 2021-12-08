@@ -6,11 +6,10 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 06:31:48 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/08 06:31:51 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/08 23:29:06 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../includes/ft_printf.h"
 
 static int	ft_printaddr2(unsigned long ptraddr, size_t printed, char *base)
