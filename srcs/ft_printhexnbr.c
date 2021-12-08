@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:12:42 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/08 05:47:21 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/08 21:22:25 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_printhexnbr2(unsigned int nb, size_t printed, char *base)
 	return (printed);
 }
 
-int	ft_printhexnbr(unsigned int nb, char c, size_t printed)
+int	ft_printhexnbr(unsigned int nb, char c)
 {
 	char	*uppbase;
 	char	*lowbase;

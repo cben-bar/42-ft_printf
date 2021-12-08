@@ -53,3 +53,5 @@ dkms.conf
 
 test*
 tripouille/
+santana_tester/
+magicTest.c
