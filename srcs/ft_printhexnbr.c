@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:12:42 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 04:16:48 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/08 02:02:46 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printhexnbr(unsigned int nb, char c, size_t printed)
 {
-	char *uppbase;
-	char *lowbase;
+	char	*uppbase;
+	char	*lowbase;
 
 	uppbase = "0123456789ABCDEF";
 	lowbase = "0123456789abcdef";
@@ -23,15 +23,15 @@ int	ft_printhexnbr(unsigned int nb, char c, size_t printed)
 	{
 		if (nb >= 16)
 		{
-			ft_printhexnbr(nb / 10)
+			ft_printhexnbr((nb / 10), c, printed);
 		}
-		printed += printc(uppbase[nb % 16]);	
+		printed += ft_printc(uppbase[nb % 16]);
 	}
 	if (c == 'X')
 	{
 		if (nb >= 16)
 		{
-			ft_printhexnbr(nb / 10);
+			ft_printhexnbr((nb / 10), c, printed);
 		}
 		printed += ft_printc(lowbase[nb % 16]);
 	}

@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 01:38:05 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/07 22:51:13 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/08 02:40:59 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_printaddr(void *add, size_t printed)
 	unsigned long	ptraddr;
 	char			*base;
 
-	ptradd = (unsigned long)add;
+	ptraddr = (unsigned long)add;
 	base = "0123456789abcdef";
 	printed += ft_printc('0');
 	printed += ft_printc('x');
 	if (ptraddr >= 16)
-		ft_printaddr(ptraddr / 16);
+		ft_printaddr(((void *)(ptraddr / 16)), printed);
 	printed += ft_printc(base[ptraddr % 16]);
 	return (printed);
 }

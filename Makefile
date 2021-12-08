@@ -6,11 +6,11 @@
 #    By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 22:55:40 by cben-bar          #+#    #+#              #
-#    Updated: 2021/12/07 23:11:32 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2021/12/08 01:49:09 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAMEi			= libftprintf.a
+NAME			= libftprintf.a
 
 FILES			= \
 					ft_printf.c			\
