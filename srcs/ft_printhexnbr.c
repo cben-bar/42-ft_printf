@@ -6,11 +6,19 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 21:12:42 by cben-bar          #+#    #+#             */
-/*   Updated: 2021/12/08 02:02:46 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2021/12/08 05:47:21 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+static int	ft_printhexnbr2(unsigned int nb, size_t printed, char *base)
+{
+	if (nb >= 16)
+		printed = ft_printhexnbr2((nb / 16), printed + 1, base);
+	ft_printc(base[nb % 16]);
+	return (printed);
+}
 
 int	ft_printhexnbr(unsigned int nb, char c, size_t printed)
 {
@@ -20,20 +28,6 @@ int	ft_printhexnbr(unsigned int nb, char c, size_t printed)
 	uppbase = "0123456789ABCDEF";
 	lowbase = "0123456789abcdef";
 	if (c == 'X')
-	{
-		if (nb >= 16)
-		{
-			ft_printhexnbr((nb / 10), c, printed);
-		}
-		printed += ft_printc(uppbase[nb % 16]);
-	}
-	if (c == 'X')
-	{
-		if (nb >= 16)
-		{
-			ft_printhexnbr((nb / 10), c, printed);
-		}
-		printed += ft_printc(lowbase[nb % 16]);
-	}
-	return (printed);
+		return (ft_printhexnbr2(nb, 1, uppbase));
+	return (ft_printhexnbr2(nb, 1, lowbase));
 }
